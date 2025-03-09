@@ -5,11 +5,10 @@ Contains routes for Flask application
 
 """
 
-from flask import Blueprint, render_template
+from flask import Blueprint, redirect, render_template, url_for
 
-base = Blueprint('base', __name__)
+home = Blueprint('home', __name__)
 
-@base.route('/')
-# ‘/’ URL is bound with hello_world() function.
-def home():
+@home.route('/')
+def index():
     return render_template('home.html')
